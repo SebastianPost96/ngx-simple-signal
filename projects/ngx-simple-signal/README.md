@@ -1,10 +1,10 @@
 # ngx-simple-signal
 
-Angular 16+ signals as property accessors. Enables usage with component inputs and template-driven forms.
+Angular 16+ Signals as property accessors. Enables usage with component inputs and template-driven forms.
 
 ## Usage
 
-Import the `SimpleSignal` decorator from the library and use it on a property the same way you would create a regular signal. This allows it to be used like a class property while keeping it's reactive functionalities.
+Import the `SimpleSignal` decorator from the library and use it on a property the same way you would create a regular Signal. This allows it to be used like a class property while keeping it's reactive functionalities.
 
 ```ts
 import { SimpleSignal } from "ngx-simple-signal";
@@ -47,7 +47,7 @@ export class MyComponent {
 }
 ```
 
-To convert a Simple Signal to a regular signal, you can use the library function `fromSimple`.
+To convert a Simple Signal to a regular Signal, you can use the library function `fromSimple`.
 
 ```ts
 import { SimpleSignal, fromSimple } from "ngx-simple-signal";
