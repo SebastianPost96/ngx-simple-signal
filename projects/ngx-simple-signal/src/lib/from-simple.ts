@@ -11,5 +11,5 @@ import { Signal, computed } from '@angular/core';
  * ```
  */
 export function fromSimple<T>(pointer: () => T): Signal<T> {
-  return computed(() => pointer());
+  return computed(pointer);
 }
