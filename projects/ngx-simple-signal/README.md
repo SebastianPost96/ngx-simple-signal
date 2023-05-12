@@ -8,8 +8,8 @@ Import the `SimpleSignal` decorator from the library and use it on a property th
 
 ```ts
 import { SimpleSignal } from "ngx-simple-signal";
-import { computed, effect } from "@angular/core";
 
+@Component({...})
 export class MyComponent {
   @SimpleSignal(0) myNumber: number;
   doubleNumber = computed(() => this.myNumber * 2);
@@ -34,8 +34,8 @@ Furthermore, it is also possible to react to component input changes.
 
 ```ts
 import { SimpleSignal } from "ngx-simple-signal";
-import { Input, effect } from "@angular/core";
 
+@Component({...})
 export class MyComponent {
   @Input() @SimpleSignal(0) numberInput: number;
 
