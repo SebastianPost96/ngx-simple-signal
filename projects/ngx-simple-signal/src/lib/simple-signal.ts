@@ -3,6 +3,10 @@ import { signal } from '@angular/core';
 /**
  * Decorator that turns a class field into a get/set accessor for a Signal.
  * @param args The same parameters that are accepted by a Signal.
+ * @example
+ * ```ts
+ *  ＠SimpleSignal(0) myNumber: number;
+ * ```
  */
 export function SimpleSignal<T>(...args: Parameters<typeof signal<T>>) {
   return function (target: object, key: string) {

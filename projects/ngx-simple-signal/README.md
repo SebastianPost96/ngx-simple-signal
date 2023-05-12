@@ -24,7 +24,7 @@ export class MyComponent {
 }
 ```
 
-Due to this special syntax, simple signals can be used as a model in template-driven forms.
+Due to this special syntax, Simple Signals can be used as a model in template-driven forms.
 
 ```html
 <input [(ngModel)]="myNumber" />
@@ -46,3 +46,19 @@ export class MyComponent {
   }
 }
 ```
+
+To convert a Simple Signal to a regular signal, you can use the library function `fromSimple`.
+
+```ts
+import { SimpleSignal, fromSimple } from "ngx-simple-signal";
+
+@Component({...})
+export class MyComponent {
+  @SimpleSignal(0) myNumber: number;
+  signal = fromSimple(() => this.myNumber);
+}
+```
+
+## Example Implementation
+
+Minesweeper | [App](https://sebastianpost96.github.io/rx-boilerstate/) | [Repo](https://github.com/SebastianPost96/rx-boilerstate/tree/test/signals/projects/minesweeper)
