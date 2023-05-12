@@ -15,6 +15,7 @@ export class MyComponent {
   doubleNumber = computed(() => this.myNumber * 2);
 
   constructor() {
+    setInterval(() => this.myNumber++, 1000);
     effect(() => {
       console.log("My number is " + this.myNumber);
       console.log("My number times two is " + this.doubleNumber());
