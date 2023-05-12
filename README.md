@@ -1,27 +1,47 @@
-# SignalLib
+# ngx-simple-signal
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
+Angular 16+ signals as property accessors. Enables usage with component inputs and template-driven forms.
 
-## Development server
+## Usage
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Import the `SimpleSignal` decorator from the library and use it on a property the same way you would create a regular signal. This allows it to be used like a class property while keeping it's reactive functionalities.
 
-## Code scaffolding
+```ts
+import { SimpleSignal } from "ngx-simple-signal";
+import { computed, effect } from "@angular/core";
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+export class MyComponent {
+  @SimpleSignal(0) myNumber: number;
+  doubleNumber = computed(() => this.myNumber * 2);
 
-## Build
+  constructor() {
+    effect(() => {
+      console.log("My number is " + this.myNumber);
+      console.log("My number times two is " + this.doubleNumber());
+    });
+  }
+}
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Due to this special syntax, simple signals can easily be used as a model in template-driven forms.
 
-## Running unit tests
+```html
+<input [(ngModel)]="myNumber" />
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Furthermore, it is also possible to react to component input changes.
 
-## Running end-to-end tests
+```ts
+import { SimpleSignal } from "ngx-simple-signal";
+import { Input, effect } from "@angular/core";
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+export class MyComponent {
+  @Input() @SimpleSignal(0) numberInput: number;
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+  constructor() {
+    effect(() => {
+      console.log("Number input changed to " + this.numberInput);
+    });
+  }
+}
+```
