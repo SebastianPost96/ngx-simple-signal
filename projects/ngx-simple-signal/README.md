@@ -78,7 +78,3 @@ export class MyComponent {
   signal = fromSimple(() => this.myNumber);
 }
 ```
-
-## Example Implementation
-
-Minesweeper | [App](https://sebastianpost96.github.io/rx-boilerstate/) | [Repo](https://github.com/SebastianPost96/rx-boilerstate/tree/test/signals/projects/minesweeper)
