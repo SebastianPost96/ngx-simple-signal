@@ -1,6 +1,6 @@
 {
   "name": "ngx-simple-signal",
-  "version": "1.1.8",
+  "version": "1.1.9",
   "peerDependencies": {
     "@angular/core": ">=16.0.1"
   },
@@ -9,7 +9,7 @@
   },
   "sideEffects": false,
   "author": "Sebastian Post",
-  "description": "Angular 16+ Signals as property accessors. Compatible with component inputs and two-way data binding.",
+  "description": "Angular 16+ Signals as get/set accessors. Compatible with component inputs and two-way data binding.",
   "keywords": [
     "Angular",
     "signals",

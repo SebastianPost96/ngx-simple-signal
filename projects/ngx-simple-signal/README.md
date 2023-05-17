@@ -1,6 +1,6 @@
 # ngx-simple-signal
 
-Angular 16+ Signals as property accessors. Compatible with component inputs and two-way data binding.
+Angular 16+ Signals as get/set accessors. Compatible with component inputs and two-way data binding.
 
 ## Description
 
